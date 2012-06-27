@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # Requires ElementTree (http://effbot.org/zone/element-index.htm)
 # It helps to pipe the output of this script through tidy, e.g.:
-# ./csv_to_tcx.py rawDataCsv.csv | tidy -i -xml
+# ./motoactv_tcx.py rawDataCsv.csv | tidy -q -i -xml
 
 import time
 import csv
