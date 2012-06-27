@@ -96,16 +96,13 @@ def main():
 		latValue = row['LATITUDE']
 		longValue = row['LONGITUDE']
 		
-		if abs(float(latValue)) <= 180 and abs(float(longValue)) <= 180:
+		if (abs(float(latValue)) <= 180 and abs(float(longValue)) <= 180
+            and abs(float(latValue)) > 0.1 and abs(float(longValue)) > 0.1):
 			posElement = SubElement(trackpointElement, "Position")
 			latElement = SubElement(posElement, "LatitudeDegrees")
 			latElement.text = latValue
 			longElement = SubElement(posElement, "LongitudeDegrees")
 			longElement.text = longValue
-		
-		# Altitude, just for Strava compatibility at the moment		
-		altElement = SubElement(trackpointElement, "AltitudeMeters")
-		altElement.text = "0.1"
 
 		# DISTANCE
 		distanceMeters = row['DISTANCE']
